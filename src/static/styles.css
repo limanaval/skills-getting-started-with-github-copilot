@@ -90,20 +90,33 @@ section h3 {
 
 
 .participants-list {
-  list-style-type: none;
-  padding-left: 0;
+  list-style-type: disc;
+  padding-left: 20px;
   margin: 0;
+  color: #333;
 }
 
 .participant-item {
   display: flex;
   align-items: center;
-  margin-bottom: 4px;
-  font-size: 0.9rem;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
   color: #333;
+  padding: 8px 10px;
+  border: 1px solid #dbe4ff;
+  border-radius: 6px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
 }
 
 .participant-email {
+  flex: 1;
+  word-break: break-all;
+  margin-right: 12px;
+  color: #1a237e;
+  font-weight: 500;
+}
   flex: 1;
   word-break: break-all;
 }

@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <p><strong>Schedule:</strong> ${details.schedule}</p>
           <p><strong>Availability:</strong> ${spotsLeft} spots left</p>
           <div class="participants-section">
-            <h5>Participants</h5>
+            <h5>Participants (${details.participants.length})</h5>
             ${participantsHTML}
           </div>
         `;
@@ -116,12 +116,13 @@ document.addEventListener("DOMContentLoaded", () => {
         messageDiv.textContent = result.message;
         messageDiv.className = "message success";
         signupForm.reset();
-        await fetchActivities();
       } else {
         messageDiv.textContent = result.detail || "An error occurred";
         messageDiv.className = "message error";
       }
 
+      // Refresh activity list after signup attempt to keep UI in sync
+      await fetchActivities();
       messageDiv.classList.remove("hidden");
 
       // Hide message after 5 seconds
