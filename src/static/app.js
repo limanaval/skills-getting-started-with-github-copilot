@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
             details.participants.map(p =>
               `<li class="participant-item">
                 <span class="participant-email">${p}</span>
-                <button class="delete-participant" title="Remove participant" data-activity="${encodeURIComponent(name)}" data-email="${encodeURIComponent(p)}">&#128465;</button>
+                <button type="button" class="delete-participant" title="Remove participant" aria-label="Remove participant" data-activity="${encodeURIComponent(name)}" data-email="${encodeURIComponent(p)}">&#128465;</button>
               </li>`
             ).join("") + `</ul>`;
         } else {
@@ -70,11 +70,11 @@ document.addEventListener("DOMContentLoaded", () => {
               const result = await response.json();
               if (response.ok) {
                 messageDiv.textContent = result.message;
-                messageDiv.className = "success";
+                messageDiv.className = "message success";
                 fetchActivities();
               } else {
                 messageDiv.textContent = result.detail || "An error occurred";
-                messageDiv.className = "error";
+                messageDiv.className = "message error";
               }
               messageDiv.classList.remove("hidden");
               setTimeout(() => {
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
               }, 5000);
             } catch (error) {
               messageDiv.textContent = "Failed to remove participant. Please try again.";
-              messageDiv.className = "error";
+              messageDiv.className = "message error";
               messageDiv.classList.remove("hidden");
               console.error("Error removing participant:", error);
             }
@@ -114,12 +114,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (response.ok) {
         messageDiv.textContent = result.message;
-        messageDiv.className = "success";
+        messageDiv.className = "message success";
         signupForm.reset();
         await fetchActivities();
       } else {
         messageDiv.textContent = result.detail || "An error occurred";
-        messageDiv.className = "error";
+        messageDiv.className = "message error";
       }
 
       messageDiv.classList.remove("hidden");
@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 5000);
     } catch (error) {
       messageDiv.textContent = "Failed to sign up. Please try again.";
-      messageDiv.className = "error";
+      messageDiv.className = "message error";
       messageDiv.classList.remove("hidden");
       console.error("Error signing up:", error);
     }
