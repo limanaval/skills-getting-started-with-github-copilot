@@ -40,12 +40,17 @@ activities = {
         "participants": ["john@mergington.edu", "olivia@mergington.edu"]
     },
     "Basketball Team": {
+<<<<<<< HEAD
         "description": "Competitive basketball training and games",
+=======
+        "description": "Competitive basketball team for intramural and league play",
+>>>>>>> 56da254 (Adiciona novas atividades extracurriculares e validação de inscrição)
         "schedule": "Mondays and Wednesdays, 4:00 PM - 5:30 PM",
         "max_participants": 15,
         "participants": ["james@mergington.edu"]
     },
     "Tennis Club": {
+<<<<<<< HEAD
         "description": "Tennis skills development and friendly matches",
         "schedule": "Tuesdays and Thursdays, 4:00 PM - 5:00 PM",
         "max_participants": 12,
@@ -74,6 +79,36 @@ activities = {
         "schedule": "Tuesdays, 3:30 PM - 5:00 PM",
         "max_participants": 20,
         "participants": ["noah@mergington.edu"]
+=======
+        "description": "Learn tennis skills and compete in matches",
+        "schedule": "Tuesdays and Thursdays, 4:00 PM - 5:00 PM",
+        "max_participants": 16,
+        "participants": ["alex@mergington.edu", "jordan@mergington.edu"]
+    },
+    "Art Studio": {
+        "description": "Explore painting, drawing, and mixed media techniques",
+        "schedule": "Wednesdays and Fridays, 3:30 PM - 5:00 PM",
+        "max_participants": 18,
+        "participants": ["maya@mergington.edu"]
+    },
+    "Music Band": {
+        "description": "Learn and perform music in our school band",
+        "schedule": "Mondays and Thursdays, 3:30 PM - 4:30 PM",
+        "max_participants": 25,
+        "participants": ["lucas@mergington.edu", "avery@mergington.edu"]
+    },
+    "Robotics Club": {
+        "description": "Design and build robots for competitions",
+        "schedule": "Tuesdays and Thursdays, 3:45 PM - 5:15 PM",
+        "max_participants": 14,
+        "participants": ["noah@mergington.edu"]
+    },
+    "Science Club": {
+        "description": "Conduct experiments and explore scientific concepts",
+        "schedule": "Wednesdays, 3:30 PM - 4:30 PM",
+        "max_participants": 20,
+        "participants": ["grace@mergington.edu", "isaac@mergington.edu"]
+>>>>>>> 56da254 (Adiciona novas atividades extracurriculares e validação de inscrição)
     }
 }
 
@@ -100,7 +135,11 @@ def signup_for_activity(activity_name: str, email: str):
 
     # Validate student is not already signed up
     if email in activity["participants"]:
+<<<<<<< HEAD
         raise HTTPException(status_code=400, detail="Student is already signed up for this activity")
+=======
+        raise HTTPException(status_code=400, detail="Student already signed up for this activity")
+>>>>>>> 56da254 (Adiciona novas atividades extracurriculares e validação de inscrição)
 
     # Add student
     activity["participants"].append(email)
